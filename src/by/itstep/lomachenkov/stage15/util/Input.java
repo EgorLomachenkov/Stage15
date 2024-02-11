@@ -8,7 +8,8 @@ public class Input {
     static {
         SCN = new Scanner(System.in);
     }
-    public static int inputSize() {
+    public static int input() {
         return SCN.nextInt();
     }
+
 }

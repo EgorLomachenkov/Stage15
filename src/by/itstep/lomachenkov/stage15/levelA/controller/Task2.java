@@ -15,7 +15,7 @@ public class Task2 {
 
         do {
             Printer.print("Enter the size: ");
-            size = Input.inputSize();
+            size = Input.input();
         } while (size <= 1);
 
         int[][] matrix = new int[size][size];
@@ -26,6 +26,6 @@ public class Task2 {
 
         Printer.print(ResultUI.format(matrix));
 
-        Printer.print(ResultUI.format(max));
+        Printer.print(ResultUI.formatMax(max));
     }
 }

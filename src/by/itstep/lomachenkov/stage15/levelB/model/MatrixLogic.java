@@ -1,59 +1,58 @@
-package by.itstep.lomachenkov.stage15.levelA.model;
+package by.itstep.lomachenkov.stage15.levelB.model;
 // All the methods has O(N^2)
 public class MatrixLogic {
-    public static int getMaxAboveMainDiagonal(int[][] matrix) {
-        int max = 0;
+    public static int countEvenNumbersAboveMainDiagonal(int[][] matrix) {
+        int count = 0;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (j > i) {
-                    max = max < matrix[i][j] ? matrix[i][j] : max;
+                    count = matrix[i][j] % 2 == 0 ? ++count : count;
                 }
             }
         }
 
-        return max;
+        return count;
     }
 
-    public static int getMaxUnderMainDiagonal(int[][] matrix) {
-        int max = 0;
+    public static int countEvenNumbersUnderMainDiagonal(int[][] matrix) {
+        int count = 0;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i > j) {
-                    max = max < matrix[i][j] ? matrix[i][j] : max;
+                    count = matrix[i][j] % 2 == 0 ? ++count : count;
                 }
             }
         }
 
-        return max;
+        return count;
     }
 
-    public static int getMaxAboveOtherDiagonal(int[][] matrix) {
-        int max = 0;
+    public static int countEvenNumbersAboveOtherDiagonal(int[][] matrix) {
+        int count = 0;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i + j < matrix.length - 1) {
-                    max = max < matrix[i][j] ? matrix[i][j] : max;
+                    count = matrix[i][j] % 2 == 0 ? ++count : count;
                 }
             }
         }
 
-        return max;
+        return count;
     }
 
-    public static int getMaxUnderOtherDiagonal(int[][] matrix) {
-        int max = 0;
+    public static int countEvenNumbersUnderOtherDiagonal(int[][] matrix) {
+        int count = 0;
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i + j >= matrix.length) {
-                    max = max < matrix[i][j] ? matrix[i][j] : max;
-                }
+                    count = matrix[i][j] % 2 == 0 ? ++count : count;                }
             }
         }
 
-        return max;
+        return count;
     }
 }
