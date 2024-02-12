@@ -3,6 +3,7 @@ package by.itstep.lomachenkov.stage15.additionaltask.model;
 
 
 public class SaddlePointsLogic {
+    //O(N * (N + M))
     public static int getSaddlePointsAmount(int[][] matrix) {
         int count = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -14,6 +15,7 @@ public class SaddlePointsLogic {
         return count;
     }
 
+    // O(N + M)
     private static boolean isThePointSaddle(int[][] matrix, int raw) {
         int suspectPoint = Integer.MAX_VALUE;
         int column = 0;
